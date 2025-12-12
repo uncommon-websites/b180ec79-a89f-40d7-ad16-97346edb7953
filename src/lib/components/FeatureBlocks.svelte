@@ -2,151 +2,197 @@
 	import FeatureBlock from './FeatureBlock.svelte';
 </script>
 
-<!-- Block 1: Search, built for AIs -->
+<div>
+<!-- Block 1: Production-Ready Models -->
 <FeatureBlock 
-	title="Search, built for AIs" 
-	description="The most accurate search tool, to bring web context to your AI agents."
+	title="Production-ready models for any use case" 
+	description="From efficient 7B models to powerful Large variants, deploy the right model for your needs."
 	buttons={[
-		{ text: "GIVE AI SEARCH A TRY", icon: true },
-		{ text: "LEARN MORE" }
+		{ text: "EXPLORE MODELS", icon: true },
+		{ text: "VIEW DOCS" }
 	]}
 >
-	<div class="w-full h-full bg-white border border-border rounded shadow-sm p-4 font-mono text-xs">
-		<div class="flex items-center gap-2 border-b border-border pb-2 mb-4">
-			<span class="text-accent">></span>
-			<span class="text-muted">Agent</span>
-			<span class="w-2 h-4 bg-accent animate-pulse"></span>
-		</div>
-		<div class="space-y-2 opacity-50">
-			<div class="h-2 bg-gray-100 w-3/4 rounded"></div>
-			<div class="h-2 bg-gray-100 w-1/2 rounded"></div>
-			<div class="h-2 bg-gray-100 w-5/6 rounded"></div>
+	<div class="w-full h-full bg-white border border-border rounded shadow-sm p-6 font-mono text-xs">
+		<div class="space-y-4">
+			<div class="flex items-center justify-between p-3 border border-primary-200 bg-primary-50/30 rounded">
+				<div class="flex items-center gap-3">
+					<div class="w-2 h-2 bg-primary-600 rounded-full"></div>
+					<span class="font-semibold">Mistral 7B</span>
+				</div>
+				<span class="text-[10px] text-muted">7.3B params</span>
+			</div>
+			<div class="flex items-center justify-between p-3 border border-primary-300 bg-primary-50/50 rounded">
+				<div class="flex items-center gap-3">
+					<div class="w-2 h-2 bg-primary-700 rounded-full"></div>
+					<span class="font-semibold">Mixtral 8x7B</span>
+				</div>
+				<span class="text-[10px] text-muted">46.7B params</span>
+			</div>
+			<div class="flex items-center justify-between p-3 border border-primary-400 bg-primary-50/70 rounded">
+				<div class="flex items-center gap-3">
+					<div class="w-2 h-2 bg-primary-800 rounded-full"></div>
+					<span class="font-semibold">Mistral Large 2</span>
+				</div>
+				<span class="text-[10px] text-muted">123B params</span>
+			</div>
 		</div>
 	</div>
 </FeatureBlock>
 
-<!-- Block 2: The most accurate deep and wide research -->
+<!-- Block 2: Mixture of Experts Architecture -->
 <FeatureBlock 
-	title="The most accurate deep and wide research" 
-	description="Run deeper and more accurate research at scale, for the same compute budget"
+	title="Mixture of Experts: Efficiency meets performance" 
+	description="Sparse MoE architecture activates only relevant experts per token, reducing compute costs while maintaining accuracy"
 	buttons={[
-		{ text: "RUN A QUERY", icon: true }
+		{ text: "LEARN MORE", icon: true }
 	]}
 	alignRight={true}
 >
 	<div class="w-full max-w-md bg-white border border-border rounded shadow-sm p-6 flex flex-col gap-4">
-		<div class="flex items-center gap-2 text-xs font-mono text-muted">
-			<div class="w-4 h-4 border border-current rounded-sm flex items-center justify-center">
-				<div class="w-2 h-2 bg-current rounded-[1px]"></div>
-			</div>
-			Starting research...
-		</div>
-		<div class="w-full bg-gray-100 h-1.5 rounded-full overflow-hidden">
-			<div class="bg-accent h-full w-2/3"></div>
-		</div>
-		<div class="flex gap-1">
-			{#each Array(20) as _}
-				<div class="w-1 h-3 bg-gray-200"></div>
+		<div class="text-[10px] font-mono text-muted mb-2">Token routing visualization</div>
+		<div class="grid grid-cols-4 gap-2">
+			{#each Array(8) as _, i}
+				<div class="aspect-square rounded border-2 {i < 2 ? 'border-primary-600 bg-primary-100' : 'border-gray-200 bg-gray-50'} flex items-center justify-center text-[10px] font-mono">
+					E{i + 1}
+				</div>
 			{/each}
 		</div>
-		<div class="mt-2 flex items-center gap-2 text-[10px] text-muted font-mono uppercase">
-			<span class="w-3 h-3 border border-current rounded-full flex items-center justify-center">i</span>
-			SEARCHING
+		<div class="flex items-center gap-2 text-[10px] text-muted font-mono mt-2">
+			<div class="w-3 h-3 bg-primary-600 rounded"></div>
+			<span>Active experts: 2/8</span>
+		</div>
+		<div class="mt-2 pt-3 border-t border-border text-[10px] text-muted">
+			Only 12.9B parameters active per token, achieving 46.7B model performance
 		</div>
 	</div>
 </FeatureBlock>
 
-<!-- Block 3: Build a dataset from the web -->
+<!-- Block 3: La Plateforme API -->
 <FeatureBlock 
-	title="Build a dataset from the web" 
-	description="Define your search criteria in natural language, and get back a structured table of matches"
+	title="La Plateforme: Direct API access" 
+	description="Access all Mistral models through our unified API platform with transparent pricing and no cloud intermediaries"
 	buttons={[
-		{ text: "CREATE A DATASET", icon: true }
+		{ text: "GET API KEY", icon: true }
 	]}
 >
-	<div class="w-full h-full bg-white border border-border rounded shadow-sm overflow-hidden font-mono text-[10px]">
-		<div class="grid grid-cols-4 gap-2 p-2 border-b border-border bg-gray-50 text-muted">
-			<div>ID</div>
-			<div>ENTITIES</div>
-			<div>IS_AI</div>
-			<div>IS_SAAS</div>
+	<div class="w-full h-full bg-gray-950 border border-border rounded shadow-sm overflow-hidden font-mono text-[10px] text-green-400 p-4">
+		<div class="mb-3 text-gray-500">$ curl https://api.mistral.ai/v1/chat/completions \</div>
+		<div class="pl-4 space-y-1">
+			<div class="text-gray-500">-H "Authorization: Bearer $MISTRAL_API_KEY" \</div>
+			<div class="text-gray-500">-H "Content-Type: application/json" \</div>
+			<div class="text-gray-500">-d '&#123;</div>
+			<div class="pl-4 text-blue-400">"model": "mistral-large-latest",</div>
+			<div class="pl-4 text-blue-400">"messages": [&#123;"role": "user", "content": "Hello"&#125;]</div>
+			<div class="text-gray-500">&#125;'</div>
 		</div>
-		{#each [1, 2, 3, 4, 5, 6] as i}
-			<div class="grid grid-cols-4 gap-2 p-2 border-b border-border/50 items-center">
-				<div class="text-muted">{i}</div>
-				<div class="flex items-center gap-2">
-					<div class="w-3 h-3 rounded-full bg-blue-400/20"></div>
-					<span class="text-blue-600">Company {i}</span>
-				</div>
-				<div class="h-1.5 w-8 bg-gray-100 rounded"></div>
-				<div class="h-1.5 w-8 bg-gray-100 rounded"></div>
-			</div>
-		{/each}
+		<div class="mt-4 pt-3 border-t border-gray-800">
+			<div class="text-gray-500">&#123;"id": "chat-abc123", "object": "chat.completion"&#125;</div>
+		</div>
+		<div class="absolute bottom-2 right-2">
+			<span class="w-2 h-2 bg-green-500 rounded-full inline-block animate-pulse"></span>
+		</div>
 	</div>
 </FeatureBlock>
 
-<!-- Block 4: Custom web enrichment -->
+<!-- Block 4: Enterprise Deployment -->
 <FeatureBlock 
-	title="Custom web enrichment" 
-	description="Bring existing data, define output columns to research, and get fresh web enrichments back"
+	title="Enterprise deployment options" 
+	description="Deploy on Azure, on-premise, or through European cloud providers with full data sovereignty and GDPR compliance"
 	buttons={[
-		{ text: "ENRICH YOUR DATA", icon: true }
+		{ text: "CONTACT SALES", icon: true }
 	]}
 	alignRight={true}
 >
-	<div class="w-full h-full bg-white border border-border rounded shadow-sm overflow-hidden font-mono text-[10px]">
-		<div class="grid grid-cols-4 gap-2 p-2 border-b border-border bg-gray-50 text-muted">
-			<div>ID</div>
-			<div>ENTITIES</div>
-			<div>PRODUCT RELEASES</div>
-			<div>SOC 2 STATUS</div>
-		</div>
-		{#each [1, 2, 3, 4, 5, 6] as i}
-			<div class="grid grid-cols-4 gap-2 p-2 border-b border-border/50 items-center">
-				<div class="text-muted">{i}</div>
-				<div class="flex items-center gap-2">
-					<div class="w-3 h-3 rounded-full bg-indigo-400/20"></div>
-					<span class="text-indigo-600">Entity {i}</span>
-				</div>
-				<div class="h-1.5 w-12 bg-gray-200 rounded animate-pulse"></div>
-				<div class="h-1.5 w-8 bg-gray-200 rounded animate-pulse"></div>
+	<div class="w-full h-full bg-white border border-border rounded shadow-sm p-6 flex flex-col gap-4">
+		<div class="flex items-center gap-3 p-3 border border-border rounded hover:border-primary-300 transition-colors cursor-pointer">
+			<div class="w-8 h-8 bg-blue-100 rounded flex items-center justify-center">
+				<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+					<rect x="3" y="3" width="7" height="7"/>
+					<rect x="14" y="3" width="7" height="7"/>
+					<rect x="14" y="14" width="7" height="7"/>
+					<rect x="3" y="14" width="7" height="7"/>
+				</svg>
 			</div>
-		{/each}
+			<div class="flex-1">
+				<div class="font-semibold text-xs">Microsoft Azure</div>
+				<div class="text-[10px] text-muted">Global cloud deployment</div>
+			</div>
+		</div>
+		<div class="flex items-center gap-3 p-3 border border-border rounded hover:border-primary-300 transition-colors cursor-pointer">
+			<div class="w-8 h-8 bg-purple-100 rounded flex items-center justify-center">
+				<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+					<path d="M12 2L2 7L12 12L22 7L12 2Z"/>
+					<path d="M2 17L12 22L22 17"/>
+					<path d="M2 12L12 17L22 12"/>
+				</svg>
+			</div>
+			<div class="flex-1">
+				<div class="font-semibold text-xs">On-Premise</div>
+				<div class="text-[10px] text-muted">Full control & security</div>
+			</div>
+		</div>
+		<div class="flex items-center gap-3 p-3 border border-border rounded hover:border-primary-300 transition-colors cursor-pointer">
+			<div class="w-8 h-8 bg-indigo-100 rounded flex items-center justify-center">
+				<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+					<circle cx="12" cy="12" r="3"/>
+					<path d="M12 1v6m0 6v6M1 12h6m6 0h6"/>
+				</svg>
+			</div>
+			<div class="flex-1">
+				<div class="font-semibold text-xs">OVHcloud</div>
+				<div class="text-[10px] text-muted">European data residency</div>
+			</div>
+		</div>
 	</div>
 </FeatureBlock>
 
-<!-- Block 5: Monitor any event on the web -->
+<!-- Block 5: Open Source Commitment -->
 <FeatureBlock 
-	title="Monitor any event on the web" 
-	description="Continuously monitor for any changes on the web"
+	title="Open source at our core" 
+	description="Apache 2.0 licensed models alongside commercial offerings. Build with transparency and community support."
 	buttons={[
-		{ text: "MONITOR THE WEB", icon: true }
+		{ text: "VIEW ON GITHUB", icon: true }
 	]}
 >
-	<div class="w-full h-full bg-white border border-border rounded shadow-sm p-4 flex flex-col gap-4">
-		<div class="flex items-center justify-between border-b border-border pb-2">
-			<div class="text-[10px] font-mono text-muted flex items-center gap-2">
-				<span class="w-2 h-2 bg-green-500 rounded-full"></span>
-				New breakthroughs in AI research
+	<div class="w-full h-full bg-white border border-border rounded shadow-sm p-6 flex flex-col gap-4">
+		<div class="flex items-center justify-between pb-3 border-b border-border">
+			<div class="text-[10px] font-mono text-muted">mistralai/mistral-src</div>
+			<div class="flex items-center gap-2">
+				<svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor" class="text-muted">
+					<path d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"/>
+				</svg>
+				<span class="text-[10px] font-mono">10.2k</span>
 			</div>
 		</div>
 		
-		<!-- Calendar/Grid visual -->
-		<div class="grid grid-cols-12 gap-1">
-			{#each Array(48) as _, i}
-				<div class="aspect-square rounded-[1px] {i === 42 ? 'bg-accent' : (Math.random() > 0.8 ? 'bg-blue-200' : 'bg-gray-50')}"></div>
-			{/each}
+		<div class="space-y-2">
+			<div class="flex items-center gap-2 p-2 rounded hover:bg-gray-50">
+				<div class="w-6 h-6 bg-primary-100 rounded flex items-center justify-center text-[10px] font-mono">📄</div>
+				<div class="flex-1 text-[10px]">
+					<div class="font-mono">mistral-7b-v0.1</div>
+					<div class="text-muted">Apache 2.0 License</div>
+				</div>
+			</div>
+			<div class="flex items-center gap-2 p-2 rounded hover:bg-gray-50">
+				<div class="w-6 h-6 bg-primary-100 rounded flex items-center justify-center text-[10px] font-mono">📄</div>
+				<div class="flex-1 text-[10px]">
+					<div class="font-mono">mixtral-8x7b-v0.1</div>
+					<div class="text-muted">Apache 2.0 License</div>
+				</div>
+			</div>
+			<div class="flex items-center gap-2 p-2 rounded hover:bg-gray-50">
+				<div class="w-6 h-6 bg-primary-100 rounded flex items-center justify-center text-[10px] font-mono">📄</div>
+				<div class="flex-1 text-[10px]">
+					<div class="font-mono">mistral-inference</div>
+					<div class="text-muted">Apache 2.0 License</div>
+				</div>
+			</div>
 		</div>
 
-		<div class="mt-auto space-y-2">
-			<div class="flex items-center gap-2 text-[10px] text-muted font-mono">
-				<span class="w-3 h-3 border border-current rounded-full flex items-center justify-center text-[8px]">!</span>
-				No
-			</div>
-			<div class="bg-gray-50 p-2 rounded border border-border flex gap-2 items-center">
-				<div class="w-4 h-4 bg-gray-200 rounded"></div>
-				<div class="h-1.5 w-24 bg-gray-200 rounded"></div>
-			</div>
+		<div class="mt-auto pt-3 border-t border-border text-[10px] text-muted">
+			<span class="w-2 h-2 bg-green-500 rounded-full inline-block mr-2"></span>
+			10M+ downloads
 		</div>
 	</div>
 </FeatureBlock>
+</div>

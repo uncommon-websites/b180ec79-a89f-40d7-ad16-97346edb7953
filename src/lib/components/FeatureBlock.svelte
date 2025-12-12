@@ -19,7 +19,7 @@
 						<button class="border border-border px-3 py-1.5 text-xs font-mono uppercase hover:bg-primary-50 transition-colors flex items-center gap-2">
 							{btn.text}
 							{#if btn.icon}
-								<span class="text-muted border border-muted/30 rounded px-1 text-[9px] min-w-[16px] text-center">P</span>
+								<span class="text-muted border border-muted/30 rounded px-1 text-[9px] min-w-[16px] text-center">M</span>
 							{/if}
 						</button>
 					{/each}
